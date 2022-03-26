@@ -9,7 +9,7 @@ const Sesion = () => {
     setWindowActive(!windowActive);
   };
   return (
-    <div className=" hover:bg-red-600  text-lg md:mb-2 md:relative border border-solid md:mt-4 md:mr-8 bg-gray-50 md:bg-red-500 border-gray-300 md:rounded ">
+    <div className=" md:hover:bg-red-600  text-lg md:mb-2 md:relative border border-solid md:mt-4 md:mr-8 bg-gray-50 md:bg-red-500 border-gray-300 md:rounded ">
       <div className="md:flex md:mr-3 md:items-center ">
         <div className=" bg-gray-50 md:bg-red-500 m-3 md:m-1 md:mr-2	border-gray-300 rounded-lg">
           <span
@@ -21,8 +21,8 @@ const Sesion = () => {
           <div
             className={
               windowActive
-                ? "block md:mr-88  md:mt-1 md:fixed md:right-8 md:h-44 w-80 md:shadow-sm md:z-10 md:bg-white  text-black"
-                : "md:hidden block"
+                ? "block md:mr-88  md:mt-1 md:fixed md:right-8 md:h-44 md:w-80 md:shadow-sm md:z-10 bg-white  text-black"
+                : "md:hidden block bg-white text-black w-full"
             }
           >
             <label className='ml-4 block'> Usuario </label>

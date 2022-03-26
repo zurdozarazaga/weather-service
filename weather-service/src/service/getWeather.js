@@ -1,9 +1,7 @@
 const getWeather = async (city, country) => {
-  //constant url and data
-  const env = process.env.REACT_APP_URL_API;
-  console.log(env);
-  const urlData = process.env.REACT_APP_URL_API + `${city},${country}&appid=` + process.env.REACT_APP_API_KEY_OPEN_WEATER_MAP + '&units=metric';
-  console.log(urlData);
+  
+  const urlData = process.env.REACT_APP_URL_API + `${city},${country}&appid=` + process.env.REACT_APP_API_KEY_OPEN_WEATER_MAP + '&units=metric&lang=es';
+  console.log('getWeather', urlData);
   try{
     const response = await fetch(urlData , {
       method: 'GET',
@@ -14,10 +12,12 @@ const getWeather = async (city, country) => {
       },
     });
     const resp = await response.json();
-    console.log(resp) 
+    console.log(resp)
+    return resp; 
   }
   catch (error) {
     console.log('fetch failed', error);
+    return error;
   }
 };
 
