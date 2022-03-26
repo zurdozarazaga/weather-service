@@ -4,6 +4,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import AppContextUser from "../context/appContextUser";
 
 const Sesion = () => {
+  ////useContext of user
   const [stateUser, dispatchStateUser, initialStateUser] =
     useContext(AppContextUser);
   const [windowActive, setWindowActive] = React.useState(false);
@@ -11,7 +12,7 @@ const Sesion = () => {
   const handleClickSesion = () => {
     setWindowActive(!windowActive);
   };
-
+  // handle of user
   const handleSubmitUser = (e) => {
     e.preventDefault();
     const { user, password } = e.target.elements;

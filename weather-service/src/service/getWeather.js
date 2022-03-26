@@ -1,3 +1,4 @@
+// call to API
 const getWeather = async (city, country) => {
   const urlData =
     process.env.REACT_APP_URL_API +

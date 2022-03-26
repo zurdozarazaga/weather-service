@@ -6,6 +6,7 @@ import {
   WeatherReducer,
 } from "../reducers/weatherReducer";
 
+// context provider for weather
 const WeatherProvider = ({ children }) => {
   const [stateWeather, dispatchWeather] = useReducer(
     WeatherReducer,

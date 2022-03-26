@@ -2,7 +2,7 @@ import React from "react";
 import { useReducer } from "react";
 import { initialStateUser, UserReducer } from "../reducers/userReducer";
 import AppContextUser from "./appContextUser";
-
+// context provider for user
 const UserProvider = ({ children }) => {
   const [stateUser, dispatchStateUser] = useReducer(
     UserReducer,

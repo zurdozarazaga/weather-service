@@ -3,9 +3,12 @@ import AppContext from "../context/context";
 import getWeather from "../service/getWeather";
 
 const Report = ({ cityValue, countryValue }) => {
+  //useContext of weather
   const [stateWeather, dispatchWeather, initialStateWeather] =
     useContext(AppContext);
+    //state to update data
   const [weather, setWeather] = useState(initialStateWeather);
+  // data
   const name = weather.state.name;
   const country = weather.state.sys.country;
   const fecha = new Date(weather.state.dt * 1000);
@@ -19,7 +22,7 @@ const Report = ({ cityValue, countryValue }) => {
   const precip = weather.state.weather[0].main;
   const humidity = weather.state.main.humidity;
   const wind = Math.round(weather.state.wind.speed);
-
+  // useEffect to get data
   useEffect(() => {
     setWeather(stateWeather);
   }, [stateWeather]);

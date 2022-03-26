@@ -14,7 +14,7 @@ const initialStateWeather = {
     name: "sin datos",
   },
 };
-
+// reducer for weather
 const WeatherReducer = (state = initialStateWeather, action) => {
   switch (action.type) {
     case "SET_WEATHER":
