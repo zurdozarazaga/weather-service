@@ -5,9 +5,6 @@ import AppContext from "../context/context";
 const Zone = () => {
   const [stateWeather, dispatchWeather, initialStateWeather] =
     useContext(AppContext);
-  console.log("state weather in zone", stateWeather);
-
-  console.log("state weather in zone", initialStateWeather);
 
   const handleSubmitSearch = async (e) => {
     e.preventDefault();

@@ -1,8 +1,11 @@
-import Layout from './components/Layout';
+import Layout from "./components/Layout";
+import UserProvider from "./context/userContex";
 
 function App() {
   return (
-    <Layout />
+    <UserProvider>
+      <Layout />
+    </UserProvider>
   );
 }
 

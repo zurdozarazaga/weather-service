@@ -3,26 +3,21 @@ const initialStateWeather = {
   state: {
     weather: [{}],
     main: {
-      temp: 'sin datos',
+      temp: "sin datos",
     },
     wind: {},
     dt: 0,
     sys: {
-      country: 'sin datos',
+      country: "sin datos",
     },
     id: 0,
-    name: 'sin datos',
+    name: "sin datos",
   },
 };
 
-
-console.log('initialStateWeather', initialStateWeather);
-
-
 const WeatherReducer = (state = initialStateWeather, action) => {
-  console.log('WeatherReducer', state, action);
   switch (action.type) {
-    case 'SET_WEATHER':
+    case "SET_WEATHER":
       return {
         ...state,
         state: action.payload,
@@ -32,4 +27,4 @@ const WeatherReducer = (state = initialStateWeather, action) => {
   }
 };
 
-export {initialStateWeather, WeatherReducer};
+export { initialStateWeather, WeatherReducer };

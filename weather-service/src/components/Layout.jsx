@@ -1,4 +1,5 @@
 import React from "react";
+import UserProvider from "../context/userContex";
 import WeatherProvider from "../context/weathercontext";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -7,7 +8,7 @@ import Main from "./Main";
 const Layout = () => {
   return (
     <WeatherProvider>
-      <div className=' w-full'>
+      <div className=" w-full">
         <Header />
         <Main />
         <Footer />

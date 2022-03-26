@@ -1,22 +1,18 @@
 const getWeather = async (city, country) => {
-  
-  const urlData = process.env.REACT_APP_URL_API + `${city},${country}&appid=` + process.env.REACT_APP_API_KEY_OPEN_WEATER_MAP + '&units=metric&lang=es';
-  console.log('getWeather', urlData);
-  try{
-    const response = await fetch(urlData , {
-      method: 'GET',
+  const urlData =
+    process.env.REACT_APP_URL_API +
+    `${city},${country}&appid=` +
+    process.env.REACT_APP_API_KEY_OPEN_WEATER_MAP +
+    "&units=metric&lang=es";
 
-      headers: {
-        // 'Content-Type': 'application/json',
-        // 'mode' : 'no-cors'
-      },
+  try {
+    const response = await fetch(urlData, {
+      method: "GET",
     });
     const resp = await response.json();
-    console.log(resp)
-    return resp; 
-  }
-  catch (error) {
-    console.log('fetch failed', error);
+
+    return resp;
+  } catch (error) {
     return error;
   }
 };
