@@ -19,29 +19,35 @@ Deberas tener instalado lo siguiente :
 ### Instalación 🔧
 
     * Instala Node.js y npm:
-        ```bash
+        ```
         npm install -g npm
         npm install -g node
         ```
   Clona el repositorio en tu máquina local:
 
   Una vez dentro del directorio del proyecto, ejecuta:
-    ```bash
-    npm install 
-    ```
+
+     *
+        ```
+        npm install
+        
+        ```
 
   Luego para ejecutar el proyecto:
-    ```bash
-    npm start
-   ```
+
+    *
+        ```
+        npm start
+        ```
   Se te abrirá un ambiente de desarrollo en el navegador en el que podrás interactuar con el proyecto.
   
 ### Configuración 🔧
 
 Para poder obtener la API key deberá ingresar a
- ```bash
-  https://openweathermap.org/
-  ```
+ 
+    *```
+      https://openweathermap.org/
+      ```
   y registrarse.
 en el apartado de key podrá encontrala
 
