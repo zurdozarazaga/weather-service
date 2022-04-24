@@ -13,6 +13,7 @@ const initialStateWeather = {
     id: 0,
     name: "sin datos",
   },
+  'loading': false,
 };
 // reducer for weather
 const WeatherReducer = (state = initialStateWeather, action) => {
@@ -21,6 +22,12 @@ const WeatherReducer = (state = initialStateWeather, action) => {
       return {
         ...state,
         state: action.payload,
+        loading: false,
+      };
+    case "SET_LOADING":
+      return {
+        ...state,
+        'loading': action.payload,
       };
     default:
       return state;

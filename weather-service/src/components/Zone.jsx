@@ -11,6 +11,10 @@ const Zone = () => {
     const { city, country } = e.target.elements;
     const cityValue = city.value;
     const countryValue = country.value;
+    dispatchWeather({
+      type: "SET_LOADING",
+      payload: true,
+    });
     const resultWeather = await getWeather(cityValue, countryValue);
     dispatchWeather({
       type: "SET_WEATHER",
