@@ -1,33 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../context/context";
+import useWeatherDate from "../hooks/useWeatherDate";
 import getWeather from "../service/getWeather";
 
 const Report = ({ cityValue, countryValue }) => {
-  //useContext of weather
-  const [stateWeather, dispatchWeather, initialStateWeather] =
-    useContext(AppContext);
-    //state to update data
-  const [weather, setWeather] = useState(initialStateWeather);
-  // data
-  const name = weather.state.name;
-  const country = weather.state.sys.country;
-  const fecha = new Date(weather.state.dt * 1000);
-  const day = fecha
-    .toLocaleDateString("es-ES", { weekday: "long" })
-    .toUpperCase();
-  const description = weather.state.weather[0].description;
-  const temp = Math.round(weather.state.main.temp);
-  const fahrenheit = ((weather.state.main.temp * 9) / 5 + 32).toFixed(1);
-  const image = `http://openweathermap.org/img/wn/${weather.state.weather[0].icon}@2x.png`;
-  const precip = weather.state.weather[0].main;
-  const humidity = weather.state.main.humidity;
-  const wind = Math.round(weather.state.wind.speed);
-  // useEffect to get data
-  useEffect(() => {
-    setWeather(stateWeather);
-  }, [stateWeather]);
+  const weatherDate = useWeatherDate();
+  const { country, name, day, description, temp, fahrenheit, image, humidity, wind  } = weatherDate;
+  
+ 
 
-  return (
+    return(
     <div className="grid gap-4 grid-cols-1 md:grid-cols-2 bg-white pl-4 pr-4">
       <div className=" md:col-span-2 flex justify-center items-center h-8 border-b-2 border-black">
         Reporte del Tiempo
