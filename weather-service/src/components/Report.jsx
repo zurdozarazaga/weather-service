@@ -4,16 +4,24 @@ import useWeatherDate from "../hooks/useWeatherDate";
 import getWeather from "../service/getWeather";
 import Spinner from "./Spinner";
 
-const Report = ({ cityValue, countryValue }) => {
-  const weatherDate = useWeatherDate();
-  const { country, name, day, description, temp, fahrenheit, image, humidity, wind, loading  } = weatherDate;
+const Report = () => {
+  
+  const [stateweather, setStateWeather] = useState({});
+  console.log(stateweather);
+  
+  const weatherData = useWeatherDate();
+  console.log(weatherData);
+  const { country, name, day, description, temp, fahrenheit, image, humidity, wind, loading, error } = weatherData;
   
  
-    if (weatherDate) {
+    if (weatherData) {
       
     }
     return(
       <>
+      {error && <div className="text-center text-red-600">{error}</div>}
+      {loading && <Spinner />}
+      {!loading && !error && (
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 bg-white pl-4 pr-4">
         <div className=" md:col-span-2 flex justify-center items-center h-8 border-b-2 border-black">
           Reporte del Tiempo
@@ -45,8 +53,8 @@ const Report = ({ cityValue, countryValue }) => {
           </div>
         </div>
       </div>
-      { loading && <Spinner />}
-      </>
+      )}
+     </> 
   );
 };
 

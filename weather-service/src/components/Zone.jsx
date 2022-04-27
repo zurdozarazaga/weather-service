@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import getWeather from "../service/getWeather";
 import AppContext from "../context/context";
 
 const Zone = () => {
   const [stateWeather, dispatchWeather, initialStateWeather] =
     useContext(AppContext);
-
+    const [ stateError, setStateError ] = useState({});
+    console.log(stateWeather.message);
   const handleSubmitSearch = async (e) => {
-    e.preventDefault();
+      e.preventDefault();
     const { city, country } = e.target.elements;
     const cityValue = city.value;
     const countryValue = country.value;
@@ -16,10 +17,31 @@ const Zone = () => {
       payload: true,
     });
     const resultWeather = await getWeather(cityValue, countryValue);
-    dispatchWeather({
-      type: "SET_WEATHER",
+    console.log( 'zone: resultWeather',resultWeather);
+    if(typeof(resultWeather)=== 'string'){
+      dispatchWeather({
+      type: "SET_ERROR",
       payload: resultWeather,
     });
+    dispatchWeather({
+      type: "SET_LOADING",
+      payload: false,
+    });
+    }else{
+      dispatchWeather({
+      type: "SET_LOADING",
+      payload: false,
+    });
+      dispatchWeather({
+        type: "SET_WEATHER",
+        payload: resultWeather,
+      });
+      dispatchWeather({
+        type: "SET_ERROR",
+        payload: '',
+      });
+    }
+  
   };
 
   return (

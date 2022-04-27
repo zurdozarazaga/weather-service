@@ -11,11 +11,18 @@ const getWeather = async (city, country) => {
       method: "GET",
     });
     const resp = await response.json();
-
+    console.log('antes de la condcion',resp);
+    console.log(typeof(resp.cod));
+    if (resp.cod !== 200) {
+      throw new Error('no se encotró resultado válido. Vuelva a intentarlo');
+    }
+    console.log('despues de la condcion',resp);
     return resp;
   } catch (error) {
-    return error;
+    return (error.message);
   }
 };
+
+
 
 export default getWeather;

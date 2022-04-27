@@ -23,12 +23,16 @@ function useWeatherDate() {
   const humidity = weather.state.main.humidity;
   const wind = Math.round(weather.state.wind.speed);
   const loading = weather.loading;
+  const error = weather.error;
+
   // useEffect to get data
   useEffect(() => {
+    console.log('useWeatherDate: useEffect');
     setWeather(stateWeather);
+  
+  //   });
   }, [stateWeather]);
-
-  return {
+  return{
     name,
     country,
     day,
@@ -40,7 +44,8 @@ function useWeatherDate() {
     humidity,
     wind,
     loading,
-}
+    error,
+  }
 }
 
 export default useWeatherDate;
