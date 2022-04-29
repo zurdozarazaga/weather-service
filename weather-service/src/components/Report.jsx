@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
+import Helmet from "react-helmet";
 import AppContext from "../context/context";
 import useWeatherDate from "../hooks/useWeatherDate";
 import getWeather from "../service/getWeather";
+import LayoutHelmet from "./LayoutHelmet";
 import Spinner from "./Spinner";
 
 const Report = () => {
@@ -19,6 +21,7 @@ const Report = () => {
     }
     return(
       <>
+      <LayoutHelmet title={'Weather Service'} description={'Aplicación para buscar los datos del tiempo en tu ciudad'} />
       {error && <div className="text-center text-red-600">{error}</div>}
       {loading && <Spinner />}
       {!loading && !error && (

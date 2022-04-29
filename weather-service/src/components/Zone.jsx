@@ -5,10 +5,10 @@ import AppContext from "../context/context";
 const Zone = () => {
   const [stateWeather, dispatchWeather, initialStateWeather] =
     useContext(AppContext);
-    const [ stateError, setStateError ] = useState({});
-    console.log(stateWeather.message);
+  const [stateError, setStateError] = useState({});
+  console.log(stateWeather.message);
   const handleSubmitSearch = async (e) => {
-      e.preventDefault();
+    e.preventDefault();
     const { city, country } = e.target.elements;
     const cityValue = city.value;
     const countryValue = country.value;
@@ -17,31 +17,30 @@ const Zone = () => {
       payload: true,
     });
     const resultWeather = await getWeather(cityValue, countryValue);
-    console.log( 'zone: resultWeather',resultWeather);
-    if(typeof(resultWeather)=== 'string'){
+    console.log("zone: resultWeather", resultWeather);
+    if (typeof resultWeather === "string") {
       dispatchWeather({
-      type: "SET_ERROR",
-      payload: resultWeather,
-    });
-    dispatchWeather({
-      type: "SET_LOADING",
-      payload: false,
-    });
-    }else{
+        type: "SET_ERROR",
+        payload: resultWeather,
+      });
       dispatchWeather({
-      type: "SET_LOADING",
-      payload: false,
-    });
+        type: "SET_LOADING",
+        payload: false,
+      });
+    } else {
+      dispatchWeather({
+        type: "SET_LOADING",
+        payload: false,
+      });
       dispatchWeather({
         type: "SET_WEATHER",
         payload: resultWeather,
       });
       dispatchWeather({
         type: "SET_ERROR",
-        payload: '',
+        payload: "",
       });
     }
-  
   };
 
   return (
@@ -59,7 +58,7 @@ const Zone = () => {
               className="md:input md:w-11/12 p-1 pl-2 md:ml-3 md:mt-3 md:mb-2 border border-solid border-gray-300 rounded-lg"
               type="text"
               name="city"
-              placeholder="Ciudad"
+              placeholder="Ingrese la ciudad"
             ></input>
             <label className="w-full ml-3 mt-2 block" htmlFor="">
               Pais
@@ -68,9 +67,9 @@ const Zone = () => {
               className="md:input md:w-11/12 p-1 pl-2 md:ml-3 md:mt-3 md:mb-2 border border-solid border-gray-300 rounded-lg"
               type="text"
               name="country"
-              placeholder="Pais"
+              placeholder="Ingrese el Pais"
             ></input>
-            <button className="md:w-11/12 md:p-1 md:ml-3 md:mt-6 md:mb-2 text-white flex p-1 mt-2 mb-4 justify-center bg-red-500 rounded-lg w-full">
+            <button className="md:w-11/12 md:p-1 md:ml-3 md:mt-6 md:mb-2 text-white flex p-1 mt-2 mb-4 justify-center bg-blue-500 hover:bg-blue-600 rounded-lg w-full">
               BUSCAR
             </button>
           </form>

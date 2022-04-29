@@ -30,12 +30,12 @@ const Sesion = () => {
   }, [stateUser]);
 
   return (
-    <div className=" md:hover:bg-red-600  text-lg md:mb-2 md:relative border border-solid md:mt-4 md:mr-8 bg-gray-50 md:bg-red-500 border-gray-300 md:rounded ">
+    <div className=" md:hover:bg-blue-600  text-lg md:mb-2 md:relative border border-solid md:mt-4 md:mr-8 bg-gray-50 md:bg-blue-500 border-gray-300 md:rounded ">
       <div className="md:flex md:mr-3 md:items-center ">
-        <div className=" bg-gray-50 md:bg-red-500 m-3 md:m-1 md:mr-2	border-gray-300 rounded-lg">
+        <div className=" bg-gray-50 md:bg-blue-500 m-3 md:m-1 md:mr-2	border-gray-300 rounded-lg">
           <span
             onClick={handleClickSesion}
-            className=" flex justify-center md:hover:bg-red-600 md:text-white text-black cursor-pointer"
+            className=" flex justify-center md:hover:bg-blue-600 md:text-white text-black cursor-pointer"
           >
             {user.state ? user.state.user : "Iniciar Sesion"}
           </span>
@@ -63,7 +63,7 @@ const Sesion = () => {
               ></input>
               <button
                 onClick={handleClickSesion}
-                className="md:w-11/12 md:p-1 md:ml-3 md:mt-2 md:mb-2 text-white flex p-1 mt-2  justify-center bg-red-500 rounded-lg w-full"
+                className="md:w-11/12 md:p-1 md:ml-3 md:mt-2 md:mb-2 text-white flex p-1 mt-2  justify-center bg-blue-500 hover:bg-blue-600 rounded-lg w-full"
               >
                 Iniciar sesión
               </button>
