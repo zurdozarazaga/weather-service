@@ -69,3 +69,5 @@ Para el manejo de estados se usaron useState, useEffect y useContext. Como asi t
 
 Los datos se consumieron desde la API de OpenWeatherMap. Los mismos se realizaron con fetch.
 
+Creditos:
+“imagen: Freepik.com”. La portada ha sido diseñada usando imágenes de Freepik.com
