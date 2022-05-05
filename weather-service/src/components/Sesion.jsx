@@ -30,9 +30,9 @@ const Sesion = () => {
   }, [stateUser]);
 
   return (
-    <div className=" md:hover:bg-blue-600  text-lg md:mb-2 md:relative border border-solid md:mt-4 md:mr-8 bg-gray-50 md:bg-blue-500 border-gray-300 md:rounded ">
+    <div className=" md:hover:bg-blue-600  text-lg md:mb-2 md:relative border border-solid md:mt-4 md:mr-8 bg-transparent md:bg-blue-500 border-gray-300 md:rounded ">
       <div className="md:flex md:mr-3 md:items-center ">
-        <div className=" bg-gray-50 md:bg-blue-500 m-3 md:m-1 md:mr-2	border-gray-300 rounded-lg">
+        <div className=" bg-transparent md:bg-blue-500 m-3 md:m-1 md:mr-2	border-gray-300 rounded-lg">
           <span
             onClick={handleClickSesion}
             className=" flex justify-center md:hover:bg-blue-600 md:text-white text-black cursor-pointer"

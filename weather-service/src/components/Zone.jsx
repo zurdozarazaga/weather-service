@@ -6,7 +6,7 @@ const Zone = () => {
   const [stateWeather, dispatchWeather, initialStateWeather] =
     useContext(AppContext);
   const [stateError, setStateError] = useState({});
-  console.log(stateWeather.message);
+  
   const handleSubmitSearch = async (e) => {
     e.preventDefault();
     const { city, country } = e.target.elements;
@@ -17,7 +17,7 @@ const Zone = () => {
       payload: true,
     });
     const resultWeather = await getWeather(cityValue, countryValue);
-    console.log("zone: resultWeather", resultWeather);
+    
     if (typeof resultWeather === "string") {
       dispatchWeather({
         type: "SET_ERROR",
@@ -45,26 +45,26 @@ const Zone = () => {
 
   return (
     <div className="col-span-1 block ">
-      <div className=" bg-white block ">
-        <div className="flex justify-center items-center h-8 border-b-2 border-black">
-          seleccione la zona
+      <div className=" bg-transparent block ">
+        <div className="flex justify-center text-gray-400 items-center h-8 border-b-2 border-black">
+          <h2>seleccione la zona</h2>
         </div>
         <div>
           <form onSubmit={handleSubmitSearch} className="block mt-2">
-            <label className="w-full ml-3 block" htmlFor="">
+            <label className="w-full ml-3 block text-gray-400" htmlFor="">
               Ciudad
             </label>
             <input
-              className="md:input md:w-11/12 p-1 pl-2 md:ml-3 md:mt-3 md:mb-2 border border-solid border-gray-300 rounded-lg"
+              className="md:input md:w-11/12 p-1 pl-2 md:ml-3 md:mt-3 md:mb-2 bg-transparent border border-solid border-gray-300 rounded-lg"
               type="text"
               name="city"
               placeholder="Ingrese la ciudad"
             ></input>
-            <label className="w-full ml-3 mt-2 block" htmlFor="">
+            <label className="w-full ml-3 mt-2 block text-gray-400" htmlFor="">
               Pais
             </label>
             <input
-              className="md:input md:w-11/12 p-1 pl-2 md:ml-3 md:mt-3 md:mb-2 border border-solid border-gray-300 rounded-lg"
+              className="md:input md:w-11/12 p-1 pl-2 md:ml-3 md:mt-3 md:mb-2 bg-transparent border border-solid border-gray-300 rounded-lg"
               type="text"
               name="country"
               placeholder="Ingrese el Pais"

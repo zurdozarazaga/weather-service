@@ -32,8 +32,6 @@ const initialStateWeather = {
 };
 // reducer for weather
 const WeatherReducer = (state = initialStateWeather, action) => {
-  console.log("WeatherReducer: action", action.payload);
-  console.log("WeatherReducer: action.type", action.type);
   switch (action.type) {
     case "SET_WEATHER":
       return {

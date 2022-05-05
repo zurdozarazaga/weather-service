@@ -9,7 +9,7 @@ const Layout = () => {
   return (
     //API call context provider 
     <WeatherProvider>
-      <div className=" w-full">
+      <div className=" w-full bg-hero-bg">
         <Header />
         <Main />
         <Footer />

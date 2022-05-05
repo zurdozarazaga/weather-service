@@ -5,7 +5,7 @@ function useWeatherDate() {
   //useContext of weather
   const [stateWeather, dispatchWeather, initialStateWeather] =
     useContext(AppContext);
-    console.log('useWeatherDate: stateWeather', stateWeather);
+
     //state to update data
   const [weather, setWeather] = useState(initialStateWeather);
   // data
@@ -27,7 +27,7 @@ function useWeatherDate() {
 
   // useEffect to get data
   useEffect(() => {
-    console.log('useWeatherDate: useEffect');
+
     setWeather(stateWeather);
   
   //   });
