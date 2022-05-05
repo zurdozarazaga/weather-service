@@ -35,28 +35,28 @@ const Sesion = () => {
         <div className=" bg-transparent md:bg-blue-500 m-3 md:m-1 md:mr-2	border-gray-300 rounded-lg">
           <span
             onClick={handleClickSesion}
-            className=" flex justify-center md:hover:bg-blue-600 md:text-white text-black cursor-pointer"
+            className=" flex justify-center md:hover:bg-blue-600 md:text-white text-gray-400 cursor-pointer"
           >
-            {user.state ? user.state.user : "Iniciar Sesion"}
+            {user.state ? user.state.user : "Iniciar Sesión"}
           </span>
           <div
             className={
               windowActive
-                ? "block md:mr-88  md:mt-1 md:fixed md:right-8 md:h-44 md:w-80 md:shadow-sm md:z-10 bg-white  text-black"
-                : "md:hidden block bg-white text-black w-full"
+                ? "block md:mr-88  md:mt-1 md:fixed md:right-8 md:h-44 md:w-80 md:shadow-sm md:z-10 bg-transparent  text-black"
+                : "md:hidden block bg-transparent text-gray-400 w-full"
             }
           >
             <form onSubmit={handleSubmitUser}>
-              <label className="ml-4 block"> Usuario </label>
+              <label className="ml-4 block text-gray-400"> Usuario </label>
               <input
-                className="md:input md:w-11/12 w-full p-1 pl-2 md:ml-3 md:mt-2 md:mb-2 border border-solid border-gray-300 rounded-lg"
+                className="md:input md:w-11/12 w-full p-1 pl-2 md:ml-3 md:mt-2 md:mb-2 text-gray-400 bg-transparent border border-solid border-gray-300 rounded-lg"
                 type="text"
                 placeholder="Usuario"
                 name="user"
               ></input>
-              <label className="ml-4 block"> Contraseña </label>
+              <label className="ml-4 block text-gray-400"> Contraseña </label>
               <input
-                className="md:input   md:w-11/12 w-full md:ml-3 md:mt-2 md:mb-2 p-1 mb-2 border border-solid  border-gray-300 rounded-lg"
+                className="md:input   md:w-11/12 w-full md:ml-3 md:mt-2 md:mb-2 p-1 mb-2 text-gray-400 bg-transparent border border-solid  border-gray-300 rounded-lg"
                 type="password"
                 placeholder="Contraseña"
                 name="password"
